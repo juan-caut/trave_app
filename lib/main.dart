@@ -6,8 +6,8 @@ import 'package:trave_app/pages/detail_page.dart';
 import 'package:trave_app/pages/navpages/main_page.dart';
 import 'package:trave_app/pages/welcome_page.dart';
 
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:trave_app/services/data_services.dart';
 
 void main() {
   // Habilitar el modo de depuración de pintura de tamaño para toda la aplicación.
@@ -28,8 +28,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider<AppCubits>(
-        create: (context) =>
-            AppCubits(), // Aquí se proporciona una función que devuelve una instancia de AppCubits
+        create: (context) => AppCubits(
+          data: DataServices(),
+        ), // Aquí se proporciona una función que devuelve una instancia de AppCubits
         child: AppCubitLogics(),
       ),
     );
