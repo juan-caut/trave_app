@@ -21,7 +21,7 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
       body: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
           if (state is DetailState) {
-            //03:53:12 video youtube
+            //
             return DetailPage();
           }
           if (state is WelcomeState) {

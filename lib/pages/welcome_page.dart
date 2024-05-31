@@ -61,7 +61,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              BlocProvider.of<AppCubits>(context).getData();
+                              BlocProvider.of<AppCubits>(context);
                             },
                             child: Container(
                                 width: 200,
